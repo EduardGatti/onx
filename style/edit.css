@@ -37,8 +37,9 @@ img{
 .editCount input{
 
     padding: 10px;
-    border: 2px solid green;
-    background-color: #d4edda;
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     border-radius: 7px;
 
 }

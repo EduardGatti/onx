@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="style/anf.css">
+    <link rel="icon" href="assets/LogoSite.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onx: annoucent</title>
+</head>
+<body>
+    <img id="logo" src="assets/onxLogo.png" alt="">
+    <div class="anuncio">
+        <h1>Cadastrar Produto</h1>
+        <label>Titulo:</label>
+        <input id="nomeProduto" type="text" placeholder="Digite um nome:" required>
+        <label>Descrição:</label>
+        <input id="descricaoProduto" type="text" placeholder="Digite sua descrição" required>
+        <label>Categoria:</label>
+        <select name="categoria" id="idCategoria">
+            <option value=""></option>
+            <option value="eletronicos">Eletrônicos</option>
+            <option value="moda">Moda</option>
+            <option value="casa">Casa e Decoração</option>
+            <option value="cuidado">Beleza e Cuidados Pessoais</option>
+            <option value="alimento">Alimentos e Bebidas</option>
+            <option value="esporte">Esportes e Lazer</option>
+            <option value="saude">Saúde e Bem-estar</option>
+            <option value="automoveis">Automóveis e Peças</option>
+            <option value="games">Brinquedos e Games</option>
+            <option value="livros">Livros, Filmes e Música</option>
+            <option value="servico">Serviços</option>
+            <option value="pets">Pets</option>
+        </select>
+        <label>Preço:</label>
+        <input type="text" id="precoProduto" placeholder="Digite um preço:" required>
+        <label>Condições:</label>
+        <select id="condicaoProduto" name="condição do produto:">
+            <option value=""></option>
+            <option value="novo">Novo</option>
+            <option value="semi">Semi-Novo</option>
+            <option value="usado">Usado</option>
+        </select>
+        <label>Estoque</label>
+        <input id="estoqueProduto" type="number" placeholder="Digite a quantidade de estoque:" required>
+        <label>Imagem:</label>
+        <div id="imagemPreview">
+            <img src="" id="previewImagem" alt="Preview" width="100" style="display: none;">
+        </div>
+        <input id="imagemProduto" type="file" placeholder="Insira uma imagem" required>
+        <button id="btnCadastrar">Cadastrar</button>
+    </div>
+    <button id="back" onclick="voltarPaginaInicial()">Voltar para Início</button>
+    <script src="scriptProduto.js"></script>
+    <script src="scriptCards.js"></script>
+</body>
+</html>

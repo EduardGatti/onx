@@ -7,6 +7,9 @@ const repetirSenhaCadastro = document.getElementById("cadastroRepetirSenha")
 const email = document.getElementById("emailLogin")
 const senha = document.getElementById("senhaLogin")
 
+
+
+
 function cadastro() {
     let mensagem = "Preencha todos os campos."
     if (nomeCadastro.value == "" || emailCadastro.value == "" || senhaCadastro.value == "" || repetirSenhaCadastro.value == "") {
@@ -46,15 +49,6 @@ function cadastro() {
     }
 }
 
-function existe(usuario, bancoDeDados) {
-    for (let verificado of bancoDeDados) {
-        if (verificado.nome === usuario.nome) {
-            return true;
-        }
-    }
-    return false;
-}
-
 function login() {
     let emailL = email.value;
     let senhaL = senha.value;
@@ -83,6 +77,19 @@ function login() {
         alert(mensagem);
     }
 }
+
+
+
+function existe(usuario, bancoDeDados) {
+    for (let verificado of bancoDeDados) {
+        if (verificado.nome === usuario.nome) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 function deslogar() {
 
@@ -119,12 +126,17 @@ function convertDate(dataBR) {
 }
 
 
+
 function editCount() {
     const perfil = JSON.parse(localStorage.getItem("bancoDados")) || [];
     const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogin"));
     const dados = document.getElementById("count");
 
-    dados.innerHTML = '';
+    if (dados) {
+        dados.innerHTML = '';
+    } else {
+        console.error("Elemento 'dados' não encontrado!");
+    }
 
     if (usuarioLogado) {
         const usuario = perfil.find(user => user.email === usuarioLogado.email);
@@ -139,7 +151,6 @@ function editCount() {
 
 
             dados.innerHTML = `
-
             <label>Email:</label>
                 <input type="email" value="${usuario.email}" disabled>
                 <label>Nome:</label>
@@ -191,4 +202,36 @@ function voltarPaginaConfig() {
 
     window.location.href = "PaginaConfig.html"
 
+}
+
+function irPaginaAnuncio() {
+
+    window.location.href = "PaginaAnuncio.html"
+
+}
+
+const dbProduto = JSON.parse(localStorage.getItem("bancoDadosProduto")) || []; 
+
+function mostraCards() {
+    const gridCard = document.getElementById("grid-container"); 
+
+    if (dbProduto.length === 0) {
+        gridCard.innerHTML = "<p>Nenhum produto cadastrado.</p>";
+        return; 
+    }
+
+
+    gridCard.innerHTML = '';
+
+    for (let i = 0; i < dbProduto.length; i++) {
+        gridCard.innerHTML += `
+            <div class="card">
+                <img src="${dbProduto[i].imagem}" alt="Imagem do Produto">
+                <h3 class="card-title">${dbProduto[i].nome}</h3>
+                <p class="card-text">${dbProduto[i].descricao}</p>
+                <p class="card-categoria">${dbProduto[i].categoria}</p>
+                <p class="card-preco">${dbProduto[i].preco}</p>
+            </div>
+        `;
+    }
 }

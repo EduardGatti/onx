@@ -151,3 +151,36 @@ footer:hover {
     max-width: 1200px;
     padding-top: 60px;
 }
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card-preco {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+}
