@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="style/count.css">
+    <link rel="icon" href="assets/LogoSite.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onx: my count</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="assets/onxLogo.png" alt="logo.png">
+        <div class="text-container">
+
+            <p onclick="voltarPaginaInicial()">Inicio</p>
+            <p>Anuciar Produto</p>
+            <p>Categoria</p>
+            <p>Favoritos</p>
+ 
+        </div>
+        <div class="search">
+            
+            <input type="text" id="search-input" placeholder="Pesquisar..." style="display: none;">
+            <img src="assets/fa--search.png" alt="search.png" id="search-icon" onclick="toggleSearchInput()">
+            
+        </div>
+        <div class="localizacao">
+
+            <img src="assets/duo-icons--location.png" alt="location.png">
+        
+        </div>
+        <div class="cart">
+
+            <img src="assets/mynaui--cart.png" alt="cart.png">
+
+        </div>
+        <div class="anuncio">
+            <img src="" alt="">
+        </div>
+    </header>
+    <div class="count" id="count">
+    </div>
+
+        <img id="back" src="assets/entypo--back.png" alt="back.png" onclick="voltarPaginaConfig()"> 
+
+    <script src="script.js"></script>
+</body>
+</html>

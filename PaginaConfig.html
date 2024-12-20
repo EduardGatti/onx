@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <link rel="stylesheet" href="style/infoConfig.css">
+    <link rel="icon" href="assets/LogoSite.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onx: config users</title>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="assets/onxLogo.png" alt="logo.png">
+        <div class="text-container">
+
+            <p onclick="voltarPaginaInicial()">Inicio</p>
+            <p>Anuciar Produto</p>
+            <p>Categoria</p>
+            <p>Favoritos</p>
+ 
+        </div>
+        <div class="search">
+            
+            <input type="text" id="search-input" placeholder="Pesquisar..." style="display: none;">
+            <img src="assets/fa--search.png" alt="search.png" id="search-icon" onclick="toggleSearchInput()">
+            
+        </div>
+        <div class="localizacao">
+
+            <img src="assets/duo-icons--location.png" alt="location.png">
+        
+        </div>
+        <div class="cart">
+
+            <img src="assets/mynaui--cart.png" alt="cart.png">
+
+        </div>
+        <div class="anuncio">
+            <img src="" alt="">
+        </div>
+        <img id="avatar" src="assets/user.png" alt="user.png" onclick="infoConfig()">
+    </header>
+    <main>
+
+        <div class="config">
+
+            <h1>Configurações</h1>
+
+            <a href="PaginaMinhaConta.html">
+
+                <button>Minha conta</button>
+
+            </a>
+            <button>Meus Produtos</button>
+            <button>Meu Carrinho</button>
+            <button onclick="deslogar()">Sair</button>
+
+        </div>
+
+    </main>
+    <footer>
+        <div class="whatsIcon">
+            <a href="https://wa.me/qr/G5J2DCMBBILJG1">
+
+                <img src="assets/logos--whatsapp-icon.png" alt="whats.icon">
+            </a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
