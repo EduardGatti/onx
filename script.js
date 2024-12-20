@@ -210,28 +210,34 @@ function irPaginaAnuncio() {
 
 }
 
-const dbProduto = JSON.parse(localStorage.getItem("bancoDadosProduto")) || []; 
 
 function mostraCards() {
+    const dbProduto = JSON.parse(localStorage.getItem("bancoDadosProduto")) || []; 
+    const nomeProduto = document.getElementById("nomeProduto");
+    const descricaoProduto = document.getElementById("descricaoProduto");
+    const precoProduto = document.getElementById("precoProduto");
+    const categoriaProduto = document.getElementById("idCategoria");
+    const estoqueProduto = document.getElementById("estoqueProduto");
+    const condicaoProduto = document.getElementById("condicaoProduto");
+    const imagemProduto = document.getElementById("imagemProduto");
+
     const gridCard = document.getElementById("grid-container"); 
-
-    if (dbProduto.length === 0) {
-        gridCard.innerHTML = "<p>Nenhum produto cadastrado.</p>";
-        return; 
-    }
-
 
     gridCard.innerHTML = '';
 
     for (let i = 0; i < dbProduto.length; i++) {
+
         gridCard.innerHTML += `
-            <div class="card">
+            <div class="card-body">
                 <img src="${dbProduto[i].imagem}" alt="Imagem do Produto">
                 <h3 class="card-title">${dbProduto[i].nome}</h3>
                 <p class="card-text">${dbProduto[i].descricao}</p>
                 <p class="card-categoria">${dbProduto[i].categoria}</p>
                 <p class="card-preco">${dbProduto[i].preco}</p>
+                <p class="card-estoque">${dbProduto[i].estoque}</p>
+                <p class="card-condicao">${dbProduto[i].condicao}</p>
             </div>
         `;
+
     }
 }
